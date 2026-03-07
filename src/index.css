@@ -1,12 +1,96 @@
+/* Custom vertical scrollbar styling - light blue */
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #f0f7fd;
+}
+body::-webkit-scrollbar-thumb {
+  background: #b3e0fc;
+  border-radius: 8px;
+  border: 2px solid #f0f7fd;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #7fd3fa;
+}
+
+/* For Firefox */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #b3e0fc #f0f7fd;
+}
+/* Hide horizontal scrollbar and prevent horizontal overflow */
+html,
+body {
+  overflow-x: hidden !important;
+}
+
+/* Ensure all <button> elements show pointer cursor */
+button,
+.cursor-pointer {
+  cursor: pointer;
+}
+/* Pop-up animation for WhatsApp button */
+@keyframes popup {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-popup {
+  animation: popup 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
 @import "tailwindcss";
 
 /* ============================================
-   THEME CONFIGURATION - TagSkills Brand Colors
+   CENTRALIZED BRAND COLORS
+   Only edit here — auto-generates all Tailwind utilities:
+   bg-brand-dark, text-brand-dark, border-brand-dark, shadow-brand-dark …
+   bg-brand-accent, text-brand-accent, border-brand-accent …
+   Opacity modifiers (e.g. /20, /[0.06]) work automatically.
+   ============================================ */
+@theme {
+  --color-brand-dark: #003462; /* Deep navy — headers, CTAs, dark sections */
+  --color-brand-accent: #0097dc; /* Sky blue  — accents, highlights, hovers   */
+}
+
+/* ============================================
+   FONTS
+   - Teachers (400–800): headings, display text
+   - DM Sans (300–700):  body, UI, captions
+   ============================================ */
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+}
+
+/* ============================================
+   THEME CONFIGURATION - GMIT Brand Colors
    ============================================
    
    Primary Colors (Logo Colors):
    - primary-dark:  #003462 - Deep navy blue for headers, CTAs
-   - primary-light: #0672ba - Bright blue for accents, highlights
+   - primary-light: #0097dc - Bright blue for accents, highlights
    
    Background Colors (Light Theme):
    - bg-white:      #ffffff - Pure white for main backgrounds
@@ -22,7 +106,7 @@
 :root {
   /* Primary Brand Colors */
   --color-primary-dark: #003462;
-  --color-primary-light: #0672ba;
+  --color-primary-light: #0097dc;
 
   /* Background Colors */
   --color-bg-white: #ffffff;
@@ -118,11 +202,13 @@ body {
 }
 
 /* Line clamp utility for text truncation */
+/* Line clamp utility for text truncation */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  line-clamp: 2;
 }
 
 /* Scroll stack enabled on all screen sizes */
@@ -137,13 +223,17 @@ body {
 
 /* Smooth global transitions */
 ::selection {
-  background: #0672ba;
+  background: var(--color-brand-accent);
   color: white;
 }
 
 /* Premium gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, #003462 0%, #0672ba 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-dark) 0%,
+    var(--color-brand-accent) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import ReviewCard from "./ReviewCard";
 
 /**
@@ -17,7 +18,7 @@ const Reviews = () => {
       company: "Cognizant Technology Services",
       experience: "2 Years Exp",
       review:
-        "Tagskills is the better platform to learn things related to SAP. This platform helped me improve my skills and career.",
+        "GMIT is the better platform to learn things related to SAP. This platform helped me improve my skills and career.",
       rating: 5,
       linkedin: true,
     },
@@ -44,7 +45,7 @@ const Reviews = () => {
       company: "Genpact",
       experience: "2 Years Exp",
       review:
-        "Tagskills platform not only gives knowledge but also provides a chance to develop skills and confidence.",
+        "GMIT platform not only gives knowledge but also provides a chance to develop skills and confidence.",
       rating: 5,
       linkedin: true,
     },
@@ -62,7 +63,7 @@ const Reviews = () => {
       company: "Mindtree Bangalore",
       experience: "Fresher",
       review:
-        "Tagskills is the best learning platform especially for freshers who want real-time experience.",
+        "GMIT is the best learning platform especially for freshers who want real-time experience.",
       rating: 5,
       linkedin: true,
     },
@@ -71,7 +72,7 @@ const Reviews = () => {
       company: "Flash Electronics India Pvt Ltd",
       experience: "1 Year Exp",
       review:
-        "Sharing my real-time experience about Tagskills. Very few institutes provide this level of training.",
+        "Sharing my real-time experience about GMIT. Very few institutes provide this level of training.",
       rating: 5,
       linkedin: true,
     },
@@ -80,7 +81,7 @@ const Reviews = () => {
       company: "Deloitte India",
       experience: "6 Years Exp",
       review:
-        "Tagskills is the better platform to learn SAP and mentors guide you in the best possible way.",
+        "GMIT is the better platform to learn SAP and mentors guide you in the best possible way.",
       rating: 5,
       linkedin: true,
     },
@@ -98,7 +99,7 @@ const Reviews = () => {
       company: "Infosys Ltd",
       experience: "1 Year Exp",
       review:
-        "I came from a mechanical background and joined Tagskills to learn SAP MM along with real industry exposure.",
+        "I came from a mechanical background and joined GMIT to learn SAP MM along with real industry exposure.",
       rating: 5,
       linkedin: true,
     },
@@ -107,7 +108,7 @@ const Reviews = () => {
       company: "TechCatalyst Software Pvt Ltd",
       experience: "5 Years Exp",
       review:
-        "Tagskills supported and mentored me to enhance my SAP knowledge with great exposure.",
+        "GMIT supported and mentored me to enhance my SAP knowledge with great exposure.",
       rating: 5,
       linkedin: true,
     },
@@ -116,7 +117,7 @@ const Reviews = () => {
       company: "Reliance Jio",
       experience: "6 Years Exp",
       review:
-        "Thank you Tagskills for providing meaningful training and support to shape my career.",
+        "Thank you GMIT for providing meaningful training and support to shape my career.",
       rating: 5,
       linkedin: true,
     },
@@ -125,7 +126,7 @@ const Reviews = () => {
       company: "Sellcraft Global Solution Pvt Ltd",
       experience: "5 Years Exp",
       review:
-        "Tagskills helped me with SAP Material Management with in-depth knowledge which was extremely helpful.",
+        "GMIT helped me with SAP Material Management with in-depth knowledge which was extremely helpful.",
       rating: 5,
       linkedin: true,
     },
@@ -134,7 +135,7 @@ const Reviews = () => {
       company: "Capgemini",
       experience: "1 Year Exp",
       review:
-        "Tagskills provided great teachers who are already working as consultants in reputed MNCs.",
+        "GMIT provided great teachers who are already working as consultants in reputed MNCs.",
       rating: 5,
       linkedin: true,
     },
@@ -145,25 +146,33 @@ const Reviews = () => {
   const reviewsRow2 = reviewsData.slice(7);
 
   return (
-    <section className="py-16 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
+    <section className="py-20 md:py-24 bg-brand-dark overflow-hidden">
       {/* Section Header */}
-      <div className="text-center mb-12">
-        <span className="inline-block px-4 py-2 border border-[#0672ba]/50 text-[#0672ba] text-sm tracking-wider mb-6 rounded-full">
+      <motion.div
+        className="text-center mb-14"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <div className="inline-flex items-center gap-2.5 border border-white/30 bg-white/10 text-white font-bold tracking-[0.22em] text-[11px] uppercase px-5 py-2 rounded-full mb-6">
+          <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
           HEAR FROM OUR STUDENTS
-        </span>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#003462]">
-          We Help <span className="text-[#0672ba]">Learners</span> Become
+          <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
+        </div>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+          We Help <span className="text-brand-accent">Learners</span> Become
           Industry-
           <br />
           Ready Developers.
         </h2>
-      </div>
+      </motion.div>
 
       {/* Row 1 - Moving Left */}
-      <div className="relative mb-8">
+      <div className="relative mb-5">
         <div className="flex animate-scroll-left">
           {[...reviewsRow1, ...reviewsRow1].map((review, index) => (
-            <div key={index} className="flex-shrink-0 w-96 mx-4">
+            <div key={index} className="shrink-0 w-80 mx-2">
               <ReviewCard {...review} />
             </div>
           ))}
@@ -174,7 +183,7 @@ const Reviews = () => {
       <div className="relative">
         <div className="flex animate-scroll-right">
           {[...reviewsRow2, ...reviewsRow2].map((review, index) => (
-            <div key={index} className="flex-shrink-0 w-96 mx-4">
+            <div key={index} className="shrink-0 w-80 mx-2">
               <ReviewCard {...review} />
             </div>
           ))}

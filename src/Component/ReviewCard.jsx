@@ -31,13 +31,17 @@ const ReviewCard = ({
 
     for (let i = 0; i < 5; i++) {
       if (i < fullStars) {
-        stars.push(<i key={i} className="ri-star-fill text-yellow-400"></i>);
+        stars.push(
+          <i key={i} className="ri-star-fill text-yellow-400 text-xs"></i>,
+        );
       } else if (i === fullStars && hasHalfStar) {
         stars.push(
-          <i key={i} className="ri-star-half-fill text-yellow-400"></i>,
+          <i key={i} className="ri-star-half-fill text-yellow-400 text-xs"></i>,
         );
       } else {
-        stars.push(<i key={i} className="ri-star-fill text-slate-300"></i>);
+        stars.push(
+          <i key={i} className="ri-star-fill text-slate-200 text-xs"></i>,
+        );
       }
     }
     return stars;
@@ -54,37 +58,46 @@ const ReviewCard = ({
   };
 
   return (
-    <div className="max-w-md bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300">
-      {/* Header - Avatar and Info */}
-      <div className="flex items-center gap-4 mb-4">
-        {/* Avatar - Show initials if no image */}
-        <div className="w-14 h-14 rounded-full border-2 border-[#0672ba]/30 flex items-center justify-center bg-gradient-to-br from-[#003462] to-[#0672ba] text-white font-bold text-lg">
-          {getInitials(name)}
-        </div>
-        {/* Name and Company */}
-        <div className="flex-1">
-          <div className="flex items-center gap-2">
-            <h4 className="text-[#003462] font-semibold text-lg">{name}</h4>
-            {linkedin && (
-              <i className="ri-linkedin-box-fill text-[#0077b5] text-lg"></i>
-            )}
-          </div>
-          <p className="text-[#0672ba] text-sm">{company}</p>
-          <p className="text-slate-500 text-xs">{experience}</p>
-        </div>
-      </div>
+    <div
+      className="w-80 rounded-2xl p-5 border border-brand-accent/15 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, #ffffff 0%, #f0faff 100%)",
+      }}
+    >
+      {/* Glow */}
+      <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-brand-accent/15 blur-xl pointer-events-none" />
+
+      {/* Quote mark */}
+      <i className="ri-double-quotes-l text-3xl text-brand-accent/20 absolute top-4 right-4"></i>
+
+      {/* Review text */}
+      <p className="text-slate-600 text-sm leading-relaxed mb-5 pr-5">
+        {review}
+      </p>
 
       {/* Divider */}
-      <hr className="border-slate-200 mb-4" />
+      <div className="h-px bg-brand-accent/10 mb-4" />
 
-      {/* Rating */}
-      <div className="flex items-center gap-2 mb-3">
-        <span className="text-slate-500 text-sm">{rating}</span>
-        <div className="flex gap-0.5">{renderStars(rating)}</div>
+      {/* Footer */}
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 rounded-full flex items-center justify-center bg-linear-to-br from-brand-dark to-brand-accent text-white font-bold text-xs shrink-0">
+          {getInitials(name)}
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-1.5">
+            <h4 className="text-brand-dark font-bold text-sm truncate">
+              {name}
+            </h4>
+            {linkedin && (
+              <i className="ri-linkedin-box-fill text-[#0077b5] text-xs shrink-0"></i>
+            )}
+          </div>
+          <p className="text-brand-accent text-xs font-medium truncate">
+            {company}
+          </p>
+        </div>
+        <div className="flex gap-0.5 shrink-0">{renderStars(rating)}</div>
       </div>
-
-      {/* Review Text */}
-      <p className="text-slate-600 text-sm leading-relaxed">{review}</p>
     </div>
   );
 };

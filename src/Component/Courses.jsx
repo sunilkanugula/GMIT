@@ -1,15 +1,9 @@
 import React from "react";
+import { motion } from "framer-motion";
 import CourseCard from "./CourseCard";
-import ScrollStack, { ScrollStackItem } from "./ScrollStack";
+import { Navigate, useNavigate } from "react-router-dom";
 
-/**
- * Courses Section Component
- *
- * Displays available courses with scroll-based stacking animation
- * Uses ScrollStack for smooth card stacking effect on scroll
- */
 const Courses = () => {
-  // Course data array - each object represents a course card
   const coursesData = [
     {
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
@@ -21,6 +15,7 @@ const Courses = () => {
       mentorSupport: "24/7",
       price: "6999",
       originalPrice: "14891",
+      badge: "TRENDING",
     },
     {
       image:
@@ -33,6 +28,7 @@ const Courses = () => {
       mentorSupport: "24/7",
       price: "5999",
       originalPrice: "12999",
+      badge: "BESTSELLER",
     },
     {
       image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800",
@@ -56,6 +52,7 @@ const Courses = () => {
       mentorSupport: "24/7",
       price: "7999",
       originalPrice: "15999",
+      badge: "NEW",
     },
     {
       image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800",
@@ -81,144 +78,89 @@ const Courses = () => {
       originalPrice: "8999",
     },
   ];
-
+  const navigate = useNavigate();
   return (
-    <section className="py-16 md:py-20 lg:py-28 px-6 lg:px-12 bg-gradient-to-b from-white via-slate-50 to-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-16 md:py-20 bg-brand-dark overflow-hidden rounded-4xl md:rounded-2xl mx-4 md:mx-6 my-10 border border-brand-accent/10 shadow-[0_4px_40px_-10px_rgba(0,151,220,0.15)]">
+      {/* Decorative blur shapes */}
+      <div className="absolute top-0 right-0 w-125 h-125 bg-brand-accent/6 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-100 h-100 bg-brand-dark/6 rounded-full translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <span className="inline-block px-4 py-2 bg-[#0672ba]/10 text-[#0672ba] text-sm font-semibold tracking-wider rounded-full mb-4">
+        <motion.div
+          className="flex flex-col items-center text-center mb-10 md:mb-14"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <div className="inline-flex items-center gap-2.5 border border-brand-accent/40 bg-brand-accent/8 text-brand-accent font-bold tracking-[0.22em] text-[11px] uppercase px-5 py-2 rounded-full mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
             EXPLORE PROGRAMS
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#003462] mb-4">
-            Our Courses
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
+          </div>
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">
+            Our{" "}
+            <span className="relative inline-block text-brand-accent">
+              Courses
+              <span className="absolute -bottom-1 left-0 w-full h-0.75 bg-brand-accent rounded-full"></span>
+            </span>
           </h2>
-          <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">
+
+          <p className="text-white/70 text-base md:text-lg max-w-xl leading-relaxed mb-0">
             Explore our industry-ready programs designed to transform your
             career
           </p>
-        </div>
+        </motion.div>
 
-        {/* Main Content - Sidebar + Cards Layout */}
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* Course Info Sidebar - Top on mobile, Left on md+ */}
-          <div className="w-full md:w-80 lg:w-96 flex-shrink-0 md:sticky md:top-24 md:self-start">
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#5b4bce] via-[#6366f1] to-[#3b82f6] p-8">
-              {/* Background image overlay */}
-              <div
-                className="absolute inset-0 opacity-20 bg-cover bg-center"
-                style={{
-                  backgroundImage:
-                    "url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800')",
-                }}
-              />
-
-              <div className="relative z-10 flex flex-col">
-                {/* SAP Courses Section */}
-                <div className="mb-8">
-                  <h3 className="text-white font-bold text-lg mb-4 tracking-wide">
-                    SAP COURSES
-                  </h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-3 text-white text-sm">
-                      <i className="ri-checkbox-fill text-lg"></i>
-                      <span className="tracking-wide">
-                        DURATION :45-75HOURS
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-3 text-white text-sm">
-                      <i className="ri-checkbox-fill text-lg"></i>
-                      <span className="tracking-wide">ERP APPLICATION</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-white text-sm">
-                      <i className="ri-checkbox-fill text-lg"></i>
-                      <span className="tracking-wide">
-                        BUSINESS PROCESS KNOWLEDGE
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Data Analytics Section */}
-                <div className="mb-8">
-                  <h3 className="text-white font-bold text-lg mb-4 tracking-wide">
-                    DATA ANALYTICS/DATA SCIENCE
-                  </h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-3 text-white text-sm">
-                      <i className="ri-checkbox-fill text-lg"></i>
-                      <span className="tracking-wide">
-                        DURATION : 75-130 HOURS
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-3 text-white text-sm">
-                      <i className="ri-checkbox-fill text-lg"></i>
-                      <span className="tracking-wide">
-                        REAL-WORLD APPLICATIONS
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-3 text-white text-sm">
-                      <i className="ri-checkbox-fill text-lg"></i>
-                      <span className="tracking-wide">PROGRAMMING SKILLS</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Additional Features */}
-                <div className="mb-8">
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-3 text-white/90 text-sm">
-                      <i className="ri-checkbox-line text-lg"></i>
-                      <span className="tracking-wide">REAL TIME PROJECT</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-white/90 text-sm">
-                      <i className="ri-checkbox-line text-lg"></i>
-                      <span className="tracking-wide">
-                        CONSULTATIVE APPROACH
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-3 text-white text-sm">
-                      <i className="ri-checkbox-fill text-lg"></i>
-                      <span className="tracking-wide">PLACEMENT SUPPORT</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* CTA Button */}
-                <div className="mt-8">
-                  <button className="w-full bg-[#f97316] hover:bg-[#ea580c] text-white font-semibold py-4 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
-                    Book Your Free Demo
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Course Cards */}
-          <div className="flex-1">
-            <ScrollStack
-              useWindowScroll={true}
-              itemDistance={60}
-              itemStackDistance={20}
-              stackPosition="25%"
-              baseScale={0.92}
-              itemScale={0.02}
+        {/* Course Grid */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.1 } },
+          }}
+        >
+          {coursesData.map((course) => (
+            <motion.div
+              key={course.title}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.5, ease: "easeOut" },
+                },
+              }}
             >
-              {coursesData.map((course, index) => (
-                <ScrollStackItem key={index} className="w-full">
-                  {/* Vertical cards on mobile */}
-                  <div className="md:hidden">
-                    <CourseCard {...course} variant="vertical" />
-                  </div>
-                  {/* Horizontal cards on tablet & desktop */}
-                  <div className="hidden md:block">
-                    <CourseCard {...course} variant="horizontal" />
-                  </div>
-                </ScrollStackItem>
-              ))}
-            </ScrollStack>
-          </div>
-        </div>
+              <CourseCard {...course} />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          className="text-center mt-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <button
+            onClick={() => {
+              window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+              navigate("/courses");
+            }}
+            className="bg-white hover:bg-brand-accent text-brand-dark hover:text-white font-semibold px-10 py-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-brand-accent/30 inline-flex items-center gap-2 text-base"
+          >
+            View All Courses
+            <i className="ri-arrow-right-line"></i>
+          </button>
+        </motion.div>
       </div>
     </section>
   );
