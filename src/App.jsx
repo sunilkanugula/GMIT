@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Router, Routes } from "react-router-dom";
 import ScrollToTop from "./Component/ScrollToTop.jsx";
 import { courseDetail as CourseDetail } from "./pages/courseDetail.jsx";
 import Home from "./pages/Home.jsx";

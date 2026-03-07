@@ -1,18 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import tcs from "../assets/tcs.png";
+// Import other logos as needed, currently using tcs for all as placeholder
 const Marquee = () => {
   const companies = [
-    { name: "Amazon", domain: "amazon.com" },
-    { name: "Walmart", domain: "walmart.com" },
-    { name: "TCS", domain: "tcs.com" },
-    { name: "Rapidops", domain: "rapidops.com" },
-    { name: "Microsoft", domain: "microsoft.com" },
-    { name: "Google", domain: "google.com" },
-    { name: "Meta", domain: "meta.com" },
-    { name: "Apple", domain: "apple.com" },
-    { name: "Infosys", domain: "infosys.com" },
-    { name: "Wipro", domain: "wipro.com" },
+    { name: "Amazon", domain: "amazon.com", localLogo: tcs },
+    { name: "Walmart", domain: "walmart.com", localLogo: tcs },
+    { name: "TCS", domain: "tcs.com", localLogo: tcs },
+    { name: "Rapidops", domain: "rapidops.com", localLogo: tcs },
+    { name: "Microsoft", domain: "microsoft.com", localLogo: tcs },
+    { name: "Google", domain: "google.com", localLogo: tcs },
+    { name: "Meta", domain: "meta.com", localLogo: tcs },
+    { name: "Apple", domain: "apple.com", localLogo: tcs },
+    { name: "Infosys", domain: "infosys.com", localLogo: tcs },
+    { name: "Wipro", domain: "wipro.com", localLogo: tcs },
   ];
 
   // Duplicate for seamless infinite loop
@@ -68,16 +69,20 @@ const Marquee = () => {
               className="mx-8 flex items-center gap-3 group cursor-default"
             >
               <img
-                src={`https://logo.clearbit.com/${company.domain}`}
+                src={
+                  company.localLogo
+                    ? company.localLogo
+                    : `https://logo.clearbit.com/${company.domain}`
+                }
                 alt={company.name}
-                className="w-6 h-6 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                className="w-32 h-32 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
                 }}
               />
-              <span className="text-slate-400 text-sm font-semibold tracking-wide group-hover:text-brand-dark transition-colors duration-300 select-none whitespace-nowrap">
+              {/* <span className="text-slate-400 text-sm font-semibold tracking-wide group-hover:text-brand-dark transition-colors duration-300 select-none whitespace-nowrap">
                 {company.name}
-              </span>
+              </span> */}
             </div>
           ))}
         </div>

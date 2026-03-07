@@ -130,7 +130,7 @@ const Courses = () => {
   ];
   const navigate = useNavigate();
   return (
-    <section className="relative py-16 md:py-20 bg-brand-dark overflow-hidden rounded-4xl md:rounded-2xl mx-4 md:mx-6 my-10 border border-brand-accent/10 shadow-[0_4px_40px_-10px_rgba(0,151,220,0.15)]">
+    <section className="relative py-16 md:py-20 bg-brand-dark overflow-hidden rounded-4xl md:rounded-2xl mx-4 md:mx-6 my-8 border border-brand-accent/10 shadow-[0_4px_40px_-10px_rgba(0,151,220,0.15)]">
       {/* Decorative blur shapes */}
       <div className="absolute top-0 right-0 w-125 h-125 bg-brand-accent/6 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-100 h-100 bg-brand-dark/6 rounded-full translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none" />

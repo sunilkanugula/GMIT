@@ -131,7 +131,7 @@ const NavBar = () => {
         {/* Mobile Hamburger */}
         <button
           onClick={openSideMenu}
-          className="md:hidden text-2xl p-2 text-brand-dark hover:bg-slate-100 rounded-lg transition-colors"
+          className={`md:hidden text-2xl p-2 rounded-lg transition-colors ${isScrolled ? "text-white hover:bg-brand-accent/20" : "text-brand-dark hover:bg-slate-100"}`}
           aria-label="Open menu"
         >
           <i className="ri-menu-line"></i>

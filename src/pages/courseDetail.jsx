@@ -103,7 +103,7 @@ export const courseDetail = () => {
 
   return (
     <>
-      <ScrollToTop />
+     
       <div className="bg-white min-h-screen">
         <NavBar />
 
