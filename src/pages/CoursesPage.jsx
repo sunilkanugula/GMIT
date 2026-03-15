@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Lenis from "lenis";
 import NavBar from "../Component/NavBar";
@@ -20,14 +20,31 @@ import { allCourses, categories } from "../data/courses";
 const CoursesPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
+
   useEffect(() => {
     const lenis = new Lenis({ duration: 1.5, smooth: true });
+    let rafId;
+
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
-    return () => lenis.destroy();
+    rafId = requestAnimationFrame(raf);
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      lenis.scrollTo(0, { immediate: true });
+    });
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
   }, []);
 
   const filtered =

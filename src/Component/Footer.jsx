@@ -151,7 +151,7 @@ const Footer = () => {
                 className="flex items-center gap-2 text-slate-300 hover:text-brand-accent transition-colors"
               >
                 <i className="ri-phone-line text-brand-accent"></i>
-                <span>+91 63609XXXXX</span>
+                <span>+91 90043 11136</span>
               </a>
             </div>
           </div>

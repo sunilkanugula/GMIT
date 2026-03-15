@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Router, Routes } from "react-router-dom";
+import ContactPopup from "./Component/ContactPopup.jsx";
 import ScrollToTop from "./Component/ScrollToTop.jsx";
 import { courseDetail as CourseDetail } from "./pages/courseDetail.jsx";
 import NotFound from "./pages/NotFound.jsx";
@@ -13,6 +14,7 @@ const App = () => {
   return (
     <div className="w-screen min-h-screen bg-white text-slate-800">
       <ScrollToTop />
+      <ContactPopup />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/courses" element={<CoursesPage />} />

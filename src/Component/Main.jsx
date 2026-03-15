@@ -13,11 +13,63 @@ import { useNavigate } from "react-router-dom";
  */
 const Main = () => {
   const navigate = useNavigate();
+  const orbitBadges = [
+    {
+      key: "facebook",
+      icon: "ri-facebook-fill",
+      label: "FB",
+      href: "#",
+      badgeClassName: "bg-white text-blue-600 shadow-blue-200/60",
+      labelName: "Facebook",
+      orbitSize: "74%",
+      offset: "-9.8rem",
+      duration: "28s",
+      angle: "24deg",
+    },
+    {
+      key: "instagram",
+      icon: "ri-instagram-line",
+      label: "1k+",
+      href: "https://www.instagram.com/gmit.in?utm_source=qr&igsh=MXRxdXdwM2p4M25mag==",
+      badgeClassName: "bg-white text-pink-500 shadow-pink-200/60",
+      labelName: "Instagram",
+      orbitSize: "92%",
+      offset: "-12.1rem",
+      duration: "20s",
+      angle: "-40deg",
+    },
+    {
+      key: "linkedin",
+      icon: "ri-linkedin-fill",
+      label: "22k+",
+      href: "https://www.linkedin.com/company/gmitin/",
+      badgeClassName: "bg-white text-sky-600 shadow-sky-200/60",
+      labelName: "LinkedIn",
+      orbitSize: "110%",
+      offset: "-14.5rem",
+      duration: "24s",
+      angle: "60deg",
+    },
+    {
+      key: "youtube",
+      icon: "ri-youtube-fill",
+      label: "9.5k+",
+      href: "#",
+      badgeClassName: "bg-white text-red-500 shadow-red-200/60",
+      labelName: "YouTube",
+      orbitSize: "128%",
+      offset: "-16.9rem",
+      duration: "22s",
+      angle: "154deg",
+    },
+  ];
+
   return (
     <section
       className="w-full min-h-screen relative overflow-hidden"
       style={{
-        background: "linear-gradient(to bottom, #ffffff 0%, #f0f9ff 100%)",
+        background:
+          "linear-gradient(135deg, #dff1ff 0%, #cfeaff 45%, #eaf6ff 100%)",
       }}
     >
       {/* Dot-grid background */}
@@ -25,19 +77,19 @@ const Main = () => {
         className="absolute inset-0 opacity-[0.4]"
         style={{
           backgroundImage:
-            "radial-gradient(circle, #cbd5e1 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(0, 151, 220, 0.18) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
         }}
       />
       {/* Top-left color blob */}
       <div
         className="absolute -top-32 -left-32 w-125 h-125 rounded-full blur-[100px] pointer-events-none"
-        style={{ background: "rgba(0, 151, 220, 0.10)" }}
+        style={{ background: "rgba(0, 151, 220, 0.18)" }}
       />
       {/* Bottom-right color blob */}
       <div
         className="absolute -bottom-24 -right-24 w-100 h-100 rounded-full blur-[80px] pointer-events-none"
-        style={{ background: "rgba(0, 53, 99, 0.08)" }}
+        style={{ background: "rgba(0, 151, 220, 0.14)" }}
       />
 
       {/* Bottom fade to white */}
@@ -45,7 +97,7 @@ const Main = () => {
         className="absolute bottom-0 left-0 right-0 h-48 z-20 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.85) 60%, rgba(255,255,255,1) 100%)",
+            "linear-gradient(to bottom, transparent 0%, rgba(234,246,255,0.84) 60%, rgba(234,246,255,1) 100%)",
         }}
       />
 
@@ -199,13 +251,81 @@ const Main = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
-            <div className="relative w-full max-w-lg">
-              {/* Decorative ring */}
-              <div className="absolute -inset-4 rounded-full border border-dashed border-brand-accent/20 pointer-events-none" />
+            <div className="relative w-full max-w-lg min-h-[28rem] sm:min-h-[34rem] flex items-end justify-center">
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="relative w-[18rem] h-[18rem] sm:w-[24rem] sm:h-[24rem]">
+                  <div className="absolute inset-[12%] rounded-full border border-brand-accent/26" />
+                  <div className="absolute inset-[-2%] rounded-full border border-brand-accent/23" />
+                  <div className="absolute -inset-[16%] rounded-full border border-brand-accent/20" />
+                  <div className="absolute -inset-[30%] rounded-full border border-brand-accent/16" />
+                  <div
+                    className="absolute inset-0 opacity-[0.12]"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(circle, #003462 1px, transparent 1px)",
+                      backgroundSize: "9px 9px",
+                      maskImage:
+                        "radial-gradient(circle at center, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.45) 55%, transparent 76%)",
+                    }}
+                  />
+                  <div className="absolute top-[22%] left-[18%] w-3 h-3 rounded-full bg-sky-300 shadow-[0_0_18px_rgba(125,211,252,0.8)]" />
+                  <div className="absolute top-[62%] left-[26%] w-2.5 h-2.5 rounded-full bg-yellow-300 shadow-[0_0_16px_rgba(253,224,71,0.8)]" />
+                  <div className="absolute top-[38%] right-[12%] w-3 h-3 rounded-full bg-rose-400 shadow-[0_0_18px_rgba(251,113,133,0.7)]" />
+                  <div className="absolute bottom-[18%] left-[46%] w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,0.8)]" />
+                  <div className="absolute top-[49%] left-[29%] w-5 h-5 rounded-md border border-amber-300/70 bg-amber-200/15 rotate-12" />
+                </div>
+              </div>
+
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 rounded-[1.75rem] bg-white/70 backdrop-blur-md border border-white/80 shadow-xl px-5 py-4 max-w-[15rem] sm:max-w-[16rem]">
+                <p className="text-sm sm:text-base italic text-brand-dark leading-relaxed">
+                  Trusted by 25K daily active learners and 5,000+ successful
+                  enrolments.
+                </p>
+              </div>
+
+              <div className="absolute inset-0 z-[5] pointer-events-none">
+                {orbitBadges.map((badge) => (
+                <a
+                  key={badge.key}
+                  href={badge.href}
+                  target={badge.href !== "#" ? "_blank" : undefined}
+                  rel={badge.href !== "#" ? "noopener noreferrer" : undefined}
+                  aria-label={`Visit GMIT on ${badge.labelName}`}
+                  className="hero-orbit absolute inset-0 pointer-events-none"
+                  style={{
+                    "--orbit-size": badge.orbitSize,
+                    "--orbit-duration": badge.duration,
+                    "--orbit-angle": badge.angle,
+                    "--orbit-offset": badge.offset,
+                  }}
+                >
+                  <div className="hero-orbit-node pointer-events-auto">
+                    <div className="hero-orbit-position">
+                      <div className="hero-orbit-upright">
+                        <div className="hero-orbit-content">
+                          <div
+                            className={`rounded-2xl px-3 py-2 sm:px-4 sm:py-3 shadow-xl ${badge.badgeClassName}`}
+                          >
+                            <div className="flex flex-col items-center leading-none">
+                              <i className={`${badge.icon} text-2xl sm:text-3xl`} />
+                              <span className="mt-1 rounded-full bg-white text-[11px] sm:text-xs font-bold text-slate-700 px-2 py-1 shadow-sm">
+                                {badge.label}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                ))}
+              </div>
+
+              <div className="absolute bottom-10 inset-x-10 h-16 rounded-full bg-brand-accent/10 blur-2xl" />
               <img
                 src={studentImg}
                 alt="Student learning"
-                className="w-full h-auto object-cover relative z-10"
+                className="w-full max-w-[24rem] sm:max-w-[28rem] lg:max-w-[30rem] h-auto object-cover relative z-10"
               />
             </div>
           </motion.div>

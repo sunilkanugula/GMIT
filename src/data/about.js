@@ -2,7 +2,7 @@
 
 // Shared stats (used by About.jsx and AboutPage.jsx)
 export const stats = [
-  { value: "2020", label: "Est. Year" },
+  { value: "2011", label: "Est. Year" },
   { value: "1M+", label: "Students" },
   { value: "100+", label: "Companies" },
   { value: "100%", label: "Online" },
@@ -78,7 +78,7 @@ export const values = [
 // Company timeline (AboutPage.jsx)
 export const timeline = [
   {
-    year: "2020",
+    year: "2011",
     title: "Founded",
     desc: "GMIT was born with a mission to make professional training accessible and practical.",
   },

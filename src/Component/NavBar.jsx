@@ -176,20 +176,7 @@ const NavBar = () => {
                 ))}
               </ul>
 
-              {/* Mobile Login Button */}
-              <div className="absolute bottom-12 left-0 right-0 flex justify-center">
-                <motion.button
-                  className="bg-white text-brand-dark px-8 py-3 rounded-lg font-semibold hover:bg-slate-100 hover:shadow-md transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.4 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setShowLogin(true)}
-                >
-                  Log in
-                </motion.button>
-              </div>
+           
             </motion.div>
           )}
         </AnimatePresence>

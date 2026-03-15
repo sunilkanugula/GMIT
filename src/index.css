@@ -250,3 +250,76 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+@keyframes hero-orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hero-orbit-counter {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.hero-orbit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: hero-orbit-spin var(--orbit-duration, 20s) linear infinite;
+}
+
+.hero-orbit-node {
+  width: var(--orbit-size, 100%);
+  height: var(--orbit-size, 100%);
+  position: relative;
+}
+
+.hero-orbit-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--orbit-angle, 0deg))
+    translateY(var(--orbit-offset, -10rem));
+}
+
+.hero-orbit-position,
+.hero-orbit-upright,
+.hero-orbit-content,
+.hero-orbit-content > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.hero-orbit-upright {
+  transform: rotate(calc(-1 * var(--orbit-angle, 0deg)));
+}
+
+.hero-orbit-content {
+  animation: hero-orbit-counter var(--orbit-duration, 20s) linear infinite;
+}
+
+.hero-orbit-content > div {
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 639px) {
+  .hero-orbit-position {
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--orbit-angle, 0deg))
+      translateY(calc(var(--orbit-offset, -10rem) * 0.78));
+  }
+}

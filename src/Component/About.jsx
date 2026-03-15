@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import msmeLogo from "../assets/msmeLogo.png";
-import founderImg from "../assets/founder.png";
+import founderImg from "../assets/founder.jpeg";
 import { stats, pillars } from "../data/about";
 
 /**
@@ -141,10 +141,10 @@ const About = () => {
                 <div className="absolute bottom-0 inset-x-0 h-24 bg-linear-to-t from-brand-dark/80 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
                   <p className="text-white font-bold text-lg leading-none">
-                    Prashun Shetty
+                   SURYA PRAKAS RAO PODILAPU
                   </p>
                   <p className="text-white/70 text-xs mt-1">
-                    Founder &amp; CEO
+                    Founder
                   </p>
                 </div>
               </div>
