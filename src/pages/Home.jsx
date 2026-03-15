@@ -20,6 +20,11 @@ import Footer from "../Component/Footer";
  * - Lenis smooth scrolling for enhanced UX
  */
 const Home = () => {
+  const whatsappNumber = "919004311136";
+  const whatsappMessage = encodeURIComponent(
+    "Hii GMIT, I need help or assistance."
+  );
+
   // Initialize Lenis smooth scrolling with optimized settings
   useEffect(() => {
     const lenis = new Lenis({
@@ -59,7 +64,7 @@ const Home = () => {
       <Footer />
       {/* WhatsApp Floating Button with Animation */}
       <a
-        href="https://wa.me/919876543210" // Replace with your WhatsApp number
+        href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-100 bg-green-500 hover:bg-green-600 rounded-full shadow-lg border-2 border-white flex items-center justify-center transition-all duration-300 animate-popup w-12 h-12 sm:w-13 sm:h-13 cursor-pointer"

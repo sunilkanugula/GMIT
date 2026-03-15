@@ -20,6 +20,11 @@ import { contactInfo, socials } from "../data/contact";
  * @returns {JSX.Element} The rendered contact page
  */
 const ContactPage = () => {
+  const whatsappNumber = "919004311136";
+  const defaultWhatsappMessage = encodeURIComponent(
+    "Hii GMIT, I need help or assistance."
+  );
+
   // Controlled form state
   const [formData, setFormData] = useState({
     name: "",
@@ -48,6 +53,17 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const whatsappMessage = encodeURIComponent(
+      `Hello GMIT, my name is ${formData.name}.
+Email: ${formData.email}
+Phone: ${formData.phone || "Not provided"}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}`
+    );
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
     setSubmitted(true);
   };
 
@@ -388,16 +404,18 @@ const ContactPage = () => {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="tel:+916360959192"
+                href="tel:+919004311136"
                 className="bg-brand-accent hover:bg-brand-accent/85 text-white px-8 py-3.5 rounded-xl font-semibold transition-colors flex items-center gap-2"
               >
                 <i className="ri-phone-line" /> Call Now
               </a>
               <a
-                href="mailto:support@gmit.com"
+                href={`https://wa.me/${whatsappNumber}?text=${defaultWhatsappMessage}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="border border-white/30 hover:border-white text-white px-8 py-3.5 rounded-xl font-semibold transition-colors flex items-center gap-2"
               >
-                <i className="ri-mail-line" /> Email Us
+                <i className="ri-whatsapp-line" /> WhatsApp Us
               </a>
             </div>
           </motion.div>
