@@ -83,18 +83,21 @@ const WhyChoose = () => {
           </h2>
           <p className="text-slate-500 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
             At GMIT, you're immersing yourself in practical, hands-on experience
-            taught by industry veterans â€” grounded in the latest industry
+            taught by industry veterans, grounded in the latest industry
             standards and practices.
           </p>
         </motion.div>
 
         {/* Feature Cards - Scroll Stack */}
         <ScrollStack
-          itemDistance={40}
-          itemStackDistance={15}
+          itemDistance={18}
+          itemStackDistance={20}
           stackPosition="80px" // Animation starts when first card touches nav bar (assumed 80px height)
-          baseScale={0.9}
-          itemScale={0.025}
+          mobileItemDistance={12}
+          mobileItemStackDistance={12}
+          mobileStackPosition="108px"
+          baseScale={1}
+          itemScale={0}
         >
           {features.map((feature, index) => (
             <ScrollStackItem key={index}>

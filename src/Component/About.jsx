@@ -153,13 +153,17 @@ const About = () => {
             {/* Social */}
             <div className="flex gap-3 mt-4">
               <a
-                href="#"
+                href="https://www.instagram.com/gmit.in?utm_source=qr&igsh=MXRxdXdwM2p4M25mag=="
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-linear-to-br from-pink-500 to-orange-400 flex items-center justify-center text-white hover:opacity-80 transition-opacity shadow-md"
               >
                 <i className="ri-instagram-line text-sm"></i>
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/gmitin/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-[#0077b5] flex items-center justify-center text-white hover:opacity-80 transition-opacity shadow-md"
               >
                 <i className="ri-linkedin-fill text-sm"></i>

@@ -23,9 +23,17 @@ export const contactInfo = [
 ];
 
 export const socials = [
-  { icon: "ri-facebook-fill", label: "Facebook" },
-  { icon: "ri-instagram-line", label: "Instagram" },
-  { icon: "ri-linkedin-fill", label: "LinkedIn" },
-  { icon: "ri-youtube-fill", label: "YouTube" },
-  { icon: "ri-whatsapp-line", label: "WhatsApp" },
+  { icon: "ri-facebook-fill", label: "Facebook", href: "#" },
+  {
+    icon: "ri-instagram-line",
+    label: "Instagram",
+    href: "https://www.instagram.com/gmit.in?utm_source=qr&igsh=MXRxdXdwM2p4M25mag==",
+  },
+  {
+    icon: "ri-linkedin-fill",
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/gmitin/",
+  },
+  { icon: "ri-youtube-fill", label: "YouTube", href: "#" },
+  { icon: "ri-whatsapp-line", label: "WhatsApp", href: "#" },
 ];

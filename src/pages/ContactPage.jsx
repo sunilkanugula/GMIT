@@ -374,12 +374,16 @@ ${formData.message}`
               </h3>
               <div className="flex flex-wrap gap-3">
                 {socials.map((s, i) => (
-                  <span
+                  <a
                     key={i}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
                     className="w-10 h-10 rounded-full border-2 border-slate-200 flex items-center justify-center text-slate-500 hover:border-brand-accent hover:text-brand-accent transition-all duration-300 cursor-pointer"
                   >
                     <i className={`${s.icon} text-lg`} />
-                  </span>
+                  </a>
                 ))}
               </div>
             </div>

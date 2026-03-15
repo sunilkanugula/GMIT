@@ -159,9 +159,9 @@ export const courseExtras = {
       "Building end-to-end ML pipelines",
     ],
     includes: [
-      { icon: "ri-play-circle-line", text: "115+ hours on-demand video" },
-      { icon: "ri-download-line", text: "45 downloadable resources" },
-      { icon: "ri-global-line", text: "Access on website & app" },
+      { icon: "ri-building-line", text: "Offline classroom training" },
+      { icon: "ri-file-text-line", text: "Printed notes and study materials" },
+      { icon: "ri-user-star-line", text: "Direct trainer guidance in class" },
       { icon: "ri-medal-line", text: "Certificate of completion" },
     ],
     highlights: [
@@ -183,9 +183,9 @@ export const courseExtras = {
       "Building complete full-stack projects",
     ],
     includes: [
-      { icon: "ri-play-circle-line", text: "120+ hours on-demand video" },
-      { icon: "ri-download-line", text: "50 downloadable resources" },
-      { icon: "ri-global-line", text: "Access on website & app" },
+      { icon: "ri-building-line", text: "Offline classroom training" },
+      { icon: "ri-file-text-line", text: "Printed notes and study materials" },
+      { icon: "ri-user-star-line", text: "Direct trainer guidance in class" },
       { icon: "ri-medal-line", text: "Certificate of completion" },
     ],
     highlights: [
@@ -208,9 +208,9 @@ export const defaultExtras = {
     "Portfolio-ready capstone project",
   ],
   includes: [
-    { icon: "ri-play-circle-line", text: "100+ hours on-demand video" },
-    { icon: "ri-download-line", text: "30+ downloadable resources" },
-    { icon: "ri-global-line", text: "Access on website & app" },
+    { icon: "ri-building-line", text: "Offline classroom training" },
+    { icon: "ri-file-text-line", text: "Printed notes and study materials" },
+    { icon: "ri-user-star-line", text: "Direct trainer guidance in class" },
     { icon: "ri-medal-line", text: "Certificate of completion" },
   ],
   highlights: [

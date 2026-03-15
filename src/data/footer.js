@@ -21,8 +21,16 @@ export const companyLinks = [
 
 export const socialLinks = [
   { icon: "ri-facebook-fill", href: "#", color: "#1877f2" },
-  { icon: "ri-instagram-line", href: "#", color: "#e4405f" },
-  { icon: "ri-linkedin-fill", href: "#", color: "#0077b5" },
+  {
+    icon: "ri-instagram-line",
+    href: "https://www.instagram.com/gmit.in?utm_source=qr&igsh=MXRxdXdwM2p4M25mag==",
+    color: "#e4405f",
+  },
+  {
+    icon: "ri-linkedin-fill",
+    href: "https://www.linkedin.com/company/gmitin/",
+    color: "#0077b5",
+  },
   { icon: "ri-youtube-fill", href: "#", color: "#ff0000" },
   { icon: "ri-whatsapp-line", href: "#", color: "#25d366" },
 ];

@@ -8,6 +8,7 @@ import Reviews from "../Component/Reviews";
 import About from "../Component/About";
 import WhyChoose from "../Component/WhyChoose";
 import Footer from "../Component/Footer";
+import SapProgram from "../Component/SapProgram";
 
 /**
  * App Component - Main application container
@@ -57,6 +58,7 @@ const Home = () => {
       <NavBar />
       <Main />
       <Marquee />
+      <SapProgram />
       <Courses />
       <Reviews />
       <About />
