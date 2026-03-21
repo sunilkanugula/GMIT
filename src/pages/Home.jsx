@@ -21,7 +21,7 @@ import SapProgram from "../Component/SapProgram";
  * - Lenis smooth scrolling for enhanced UX
  */
 const Home = () => {
-  const whatsappNumber = "919004311136";
+  const whatsappNumber = "919959431136";
   const whatsappMessage = encodeURIComponent(
     "Hii GMIT, I need help or assistance."
   );

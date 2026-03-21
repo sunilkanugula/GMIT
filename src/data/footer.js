@@ -32,5 +32,9 @@ export const socialLinks = [
     color: "#0077b5",
   },
   { icon: "ri-youtube-fill", href: "#", color: "#ff0000" },
-  { icon: "ri-whatsapp-line", href: "#", color: "#25d366" },
+  {
+    icon: "ri-whatsapp-line",
+    href: "https://wa.me/919959431136",
+    color: "#25d366",
+  },
 ];

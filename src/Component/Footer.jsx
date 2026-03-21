@@ -131,27 +131,28 @@ const Footer = () => {
               <div className="flex items-center gap-2 text-slate-300">
                 <i className="ri-map-pin-line text-brand-accent"></i>
                 <span>
-                  No.412, C block, Amity Ramapriya Apartment, Hosakerehalli, BSK
-                  3rd Stage, Bangalore-560085
+                  GMIT, 1st Floor, Pavan Towers, 48-9-19, Dwaraka Nagar 1st
+                  Ln, near RTC Complex, opp. budhil Park Hotel line,
+                  Dwarakanagar, Visakhapatnam, Andhra Pradesh 530016
                 </span>
               </div>
 
               {/* Email */}
               <a
-                href="mailto:support@gmit.com"
+                href="mailto:hellogmit@gmail.com"
                 className="flex items-center gap-2 text-slate-300 hover:text-brand-accent transition-colors"
               >
                 <i className="ri-mail-line text-brand-accent"></i>
-                <span>support@gmit.com</span>
+                <span>hellogmit@gmail.com</span>
               </a>
 
               {/* Phone */}
               <a
-                href="tel:+916360959192"
+                href="tel:+919959431136"
                 className="flex items-center gap-2 text-slate-300 hover:text-brand-accent transition-colors"
               >
                 <i className="ri-phone-line text-brand-accent"></i>
-                <span>+91 90043 11136</span>
+                <span>+91 99594 31136</span>
               </a>
             </div>
           </div>

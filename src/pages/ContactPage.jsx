@@ -20,7 +20,7 @@ import { contactInfo, socials } from "../data/contact";
  * @returns {JSX.Element} The rendered contact page
  */
 const ContactPage = () => {
-  const whatsappNumber = "919004311136";
+  const whatsappNumber = "919959431136";
   const defaultWhatsappMessage = encodeURIComponent(
     "Hii GMIT, I need help or assistance."
   );
@@ -408,7 +408,7 @@ ${formData.message}`
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="tel:+919004311136"
+                href="tel:+919959431136"
                 className="bg-brand-accent hover:bg-brand-accent/85 text-white px-8 py-3.5 rounded-xl font-semibold transition-colors flex items-center gap-2"
               >
                 <i className="ri-phone-line" /> Call Now

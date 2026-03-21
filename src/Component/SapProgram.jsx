@@ -37,7 +37,7 @@ const highlights = [
 const SapProgram = () => {
   const primaryNumber = "+919959431136";
   const secondaryNumber = "+918328301707";
-  const whatsappNumber = "919004311136";
+  const whatsappNumber = "919959431136";
   const whatsappMessage = encodeURIComponent(
     "Hii GMIT, I need help or assistance with the SAP S/4 HANA job oriented program."
   );

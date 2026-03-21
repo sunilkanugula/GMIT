@@ -49,14 +49,14 @@ const ContactPopup = () => {
 
         <div className="grid gap-3">
           <a
-            href="tel:+919004311136"
+            href="tel:+919959431136"
             className="flex items-center justify-center gap-2 rounded-2xl bg-brand-dark px-5 py-3.5 font-semibold text-white transition-colors hover:bg-brand-accent"
           >
             <i className="ri-phone-line" />
             Call Now
           </a>
           <a
-            href="https://wa.me/919004311136?text=Hii%20GMIT%2C%20I%20need%20help%20or%20assistance."
+            href="https://wa.me/919959431136?text=Hii%20GMIT%2C%20I%20need%20help%20or%20assistance."
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 rounded-2xl border border-slate-200 px-5 py-3.5 font-semibold text-slate-700 transition-colors hover:border-brand-accent hover:text-brand-accent"
