@@ -6,20 +6,32 @@
 
 // ─── All Courses ───
 export const allCourses = [
+  // SAP Courses (prioritized)
   {
-    image:
-      "https://images.unsplash.com/photo-1649180556628-9ba704115795?q=80&w=1162&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Python Programming Masterclass",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800",
+    title: "SAP S/4 HANA SD",
     description:
-      "Start from basics and build real-world applications using Python.",
+      "Become proficient in SAP Sales & Distribution with real business scenarios.",
     months: "6",
     certified: "Yes",
     mentorSupport: "24/7",
-    price: "3999",
-    originalPrice: "8999",
-    category: "Development",
+    price: "8999",
+    originalPrice: "17999",
+    category: "ERP",
   },
-  // SAP Courses
+  {
+    image:
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800",
+    title: "SAP S/4 HANA FICO",
+    description:
+      "Learn financial accounting and controlling in SAP with hands-on projects.",
+    months: "6",
+    certified: "Yes",
+    mentorSupport: "24/7",
+    price: "8999",
+    originalPrice: "17999",
+    category: "ERP",
+  },
   {
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
@@ -37,31 +49,6 @@ export const allCourses = [
   {
     image:
       "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800",
-    title: "SAP S/4 HANA FICO",
-    description:
-      "Learn financial accounting and controlling in SAP with hands-on projects.",
-    months: "6",
-    certified: "Yes",
-    mentorSupport: "24/7",
-    price: "8999",
-    originalPrice: "17999",
-    category: "ERP",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800",
-    title: "SAP S/4 HANA SD",
-    description:
-      "Become proficient in SAP Sales & Distribution with real business scenarios.",
-    months: "6",
-    certified: "Yes",
-    mentorSupport: "24/7",
-    price: "8999",
-    originalPrice: "17999",
-    category: "ERP",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800",
     title: "SAP ABAP Programming",
     description:
       "Learn SAP ABAP programming for custom development and integration.",
@@ -72,19 +59,18 @@ export const allCourses = [
     originalPrice: "17999",
     category: "ERP",
   },
-  // Full Stack & BI
+  // Programming & BI
   {
     image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800",
-    title: "Python Full Stack Development",
+      "https://images.unsplash.com/photo-1649180556628-9ba704115795?q=80&w=1162&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Python Programming Masterclass",
     description:
-      "Comprehensive Python full stack course: Django, Flask, React, and more.",
+      "Start from basics and build real-world applications using Python.",
     months: "6",
     certified: "Yes",
     mentorSupport: "24/7",
-    price: "9999",
-    originalPrice: "19999",
-    badge: "NEW",
+    price: "3999",
+    originalPrice: "8999",
     category: "Development",
   },
   {
@@ -113,6 +99,7 @@ export const allCourses = [
     originalPrice: "15999",
     category: "Data & AI",
   },
+ 
   // Data Science 6 Months
   {
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",

@@ -4,6 +4,7 @@ import Lenis from "lenis";
 import NavBar from "../Component/NavBar";
 import Footer from "../Component/Footer";
 import { stats, aboutPagePillars as pillars, values, timeline } from "../data/about";
+import { openWhatsAppChat } from "../utils/whatsapp";
 
 /**
  * About Us Page
@@ -249,7 +250,10 @@ const AboutPage = () => {
               Join the GMIT community and start your transformation today.
             </p>
           </div>
-          <button className="bg-white text-brand-accent px-8 py-3.5 rounded-xl font-bold hover:bg-slate-50 transition-colors shrink-0 flex items-center gap-2">
+          <button
+            onClick={() => openWhatsAppChat()}
+            className="bg-white text-brand-accent px-8 py-3.5 rounded-xl font-bold hover:bg-slate-50 transition-colors shrink-0 flex items-center gap-2"
+          >
             Get Started <i className="ri-arrow-right-line" />
           </button>
         </motion.div>

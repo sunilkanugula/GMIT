@@ -1,15 +1,27 @@
 // ─── Footer Data ───
 
-export const erpCourses = [
-  { name: "S/4 HANA MM", href: "#" },
-  { name: "S/4 HANA SD", href: "#" },
-  { name: "S/4 HANA FICO", href: "#" },
-  { name: "S/4 HANA ABAP", href: "#" },
-  { name: "S/4 HANA TM", href: "#" },
-  { name: "Python Full stack", href: "#" },
-  { name: "Java Full stack", href: "#" },
-  { name: "Power BI", href: "#" },
-  { name: "Data science", href: "#" },
+const erpCourseNames = [
+  "S/4 HANA MM",
+  "S/4 HANA SD",
+  "S/4 HANA FICO",
+  "S/4 HANA ABAP",
+  "S/4 HANA TM",
+  "Python Full stack",
+  "Java Full stack",
+  "Power BI",
+  "Data science",
+];
+
+export const erpCourses = erpCourseNames.map((name) => ({
+  name,
+  href: "/courses",
+}));
+
+export const programmingCourses = [
+  { name: "Python Full stack", href: "/courses#python" },
+  { name: "Java Full stack", href: "/courses#java" },
+  { name: "Power BI", href: "/courses#powerbi" },
+  { name: "Data science", href: "/courses#datascience" },
 ];
 
 export const companyLinks = [

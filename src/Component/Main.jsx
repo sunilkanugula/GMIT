@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import studentImg from "../assets/student2.png";
 import { useNavigate } from "react-router-dom";
+import { openWhatsAppChat } from "../utils/whatsapp";
 
 /**
  * Main Hero Section Component
@@ -226,9 +227,7 @@ const Main = () => {
                 className="bg-brand-dark hover:bg-brand-accent text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-brand-dark/25 flex items-center gap-2 text-base"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
-                onClick={() =>
-                  window.dispatchEvent(new Event("open-login-modal"))
-                }
+                onClick={() => openWhatsAppChat()}
               >
                 Get Started
                 <i className="ri-arrow-right-line"></i>

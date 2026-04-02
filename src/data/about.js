@@ -3,9 +3,9 @@
 // Shared stats (used by About.jsx and AboutPage.jsx)
 export const stats = [
   { value: "2011", label: "Est. Year" },
-  { value: "1M+", label: "Students" },
+  { value: "10K+", label: "Students" },
   { value: "100+", label: "Companies" },
-  { value: "100%", label: "Online" },
+  { value: "100%", label: "Online and Offline" },
 ];
 
 // About component pillars (3 items — used on homepage)
@@ -99,7 +99,7 @@ export const timeline = [
   },
   {
     year: "2024",
-    title: "1 Million+ Learners",
+    title: "15K + Learners",
     desc: "Crossed the milestone of 1 million students trained across multiple domains.",
   },
 ];

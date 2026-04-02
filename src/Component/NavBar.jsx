@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
-import LoginModal from "./LoginModal.jsx";
 import logo from "../assets/logo.svg";
 import { navMenu as NavMenu } from "../data/navigation";
 
@@ -23,17 +22,9 @@ const NavBar = () => {
   const [isVisible, setIsVisible] = useState(true);    // Controls hiding/showing nav on scroll
   const [lastScrollY, setLastScrollY] = useState(0);   // Tracks previous scroll position
   const [isScrolled, setIsScrolled] = useState(false); // Tracks if user has scrolled past top
-  const [showLogin, setShowLogin] = useState(false);   // Login Modal visibility state
 
   const openSideMenu = () => setIsMenuOpen(true);
   const closeSideMenu = () => setIsMenuOpen(false);
-
-  // Listen for custom event to open login modal from anywhere
-  useEffect(() => {
-    const handler = () => setShowLogin(true);
-    window.addEventListener("open-login-modal", handler);
-    return () => window.removeEventListener("open-login-modal", handler);
-  }, []);
 
   // Handle scroll to show/hide navbar
   useEffect(() => {
@@ -181,7 +172,6 @@ const NavBar = () => {
           )}
         </AnimatePresence>
       </nav>
-      <LoginModal open={showLogin} onClose={() => setShowLogin(false)} />
     </motion.header>
   );
 };
