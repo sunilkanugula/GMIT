@@ -1,11 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.svg";
-import {
-  erpCourses,
-  programmingCourses,
-  companyLinks,
-  socialLinks,
-} from "../data/footer";
+import { erpPrimary, erpSecondary, companyLinks, socialLinks } from "../data/footer";
 
 /**
  * Footer Component - Site footer with navigation and contact info
@@ -46,39 +41,33 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* ERP Courses */}
           <div>
             <h3 className="text-brand-accent font-bold text-lg mb-6">
               ERP Courses
             </h3>
-            <div className="flex flex-col gap-2">
-              {erpCourses.map((course, index) => (
-                <a
-                  key={index}
-                  href={course.href}
-                  className="text-slate-300 text-sm hover:text-brand-accent transition-colors duration-300"
-                >
-                  {course.name}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Development & Analytics */}
-          <div>
-            <h3 className="text-brand-accent font-bold text-lg mb-6">
-              Development &amp; Analytics
-            </h3>
-            <div className="flex flex-col gap-2">
-              {programmingCourses.map((course, index) => (
-                <a
-                  key={index}
-                  href={course.href}
-                  className="text-slate-300 text-sm hover:text-brand-accent transition-colors duration-300"
-                >
-                  {course.name}
-                </a>
-              ))}
+            <div className="grid grid-cols-2 gap-6 text-slate-300 text-sm">
+              <div className="flex flex-col gap-2">
+                {erpPrimary.map((course, index) => (
+                  <a
+                    key={index}
+                    href={course.href}
+                    className="hover:text-brand-accent transition-colors duration-300"
+                  >
+                    {course.name}
+                  </a>
+                ))}
+              </div>
+              <div className="flex flex-col gap-2">
+                {erpSecondary.map((course, index) => (
+                  <a
+                    key={index}
+                    href={course.href}
+                    className="hover:text-brand-accent transition-colors duration-300"
+                  >
+                    {course.name}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 

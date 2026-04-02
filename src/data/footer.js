@@ -1,28 +1,26 @@
 // ─── Footer Data ───
 
-const erpCourseNames = [
+const buildLink = (name, fragment) => ({
+  name,
+  href: fragment ? `/courses#${fragment}` : "/courses",
+});
+
+const erpPrimary = [
   "S/4 HANA MM",
   "S/4 HANA SD",
   "S/4 HANA FICO",
   "S/4 HANA ABAP",
   "S/4 HANA TM",
-  "Python Full stack",
-  "Java Full stack",
-  "Power BI",
-  "Data science",
-];
+].map((name) => buildLink(name));
 
-export const erpCourses = erpCourseNames.map((name) => ({
-  name,
-  href: "/courses",
-}));
+const erpSecondary = [
+  { name: "Python Full stack", fragment: "python" },
+  { name: "Java Full stack", fragment: "java" },
+  { name: "Power BI", fragment: "powerbi" },
+  { name: "Data science", fragment: "datascience" },
+].map(({ name, fragment }) => buildLink(name, fragment));
 
-export const programmingCourses = [
-  { name: "Python Full stack", href: "/courses#python" },
-  { name: "Java Full stack", href: "/courses#java" },
-  { name: "Power BI", href: "/courses#powerbi" },
-  { name: "Data science", href: "/courses#datascience" },
-];
+export { erpPrimary, erpSecondary };
 
 export const companyLinks = [
   { name: "Success Story", href: "#" },
